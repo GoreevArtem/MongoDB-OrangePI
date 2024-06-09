@@ -1,25 +1,25 @@
-sudo adduser --ingroup nogroup --shell /etc/false --disabled-password --gecos "" \
+adduser --ingroup nogroup --shell /etc/false --disabled-password --gecos "" \
 --no-create-home mongodb
 
-sudo mkdir /var/log/mongodb
-sudo chown mongodb:nogroup /var/log/mongodb
+mkdir /var/log/mongodb
+chown mongodb:nogroup /var/log/mongodb
 
-sudo mkdir /var/lib/mongodb
-sudo chown mongodb:root /var/lib/mongodb
-sudo chmod 775 /var/lib/mongodb
+mkdir /var/lib/mongodb
+chown mongodb:root /var/lib/mongodb
+chmod 775 /var/lib/mongodb
 
 git clone https://github.com/robertsLando/MongoDB-OrangePI.git
 
 cd MongoDB-OrangePI
-sudo cp mongodb.conf /etc
-sudo cp mongodb.service /lib/systemd/system
+cp mongodb.conf /etc
+cp mongodb.service /lib/systemd/system
 
 cd bin
-sudo chown root:root mongo*
-sudo chmod 755 mongo*
-sudo cp -p mongo* /usr/bin
+chown root:root mongo*
+chmod 755 mongo*
+cp -p mongo* /usr/bin
 
-sudo systemctl start mongodb
-sudo systemctl status mongodb
+systemctl start mongodb
+systemctl status mongodb
 
-sudo systemctl enable mongodb
+systemctl enable mongodb
