@@ -12,4 +12,6 @@ RUN git clone https://github.com/GoreevArtem/MongoDB-OrangePI.git
 
 RUN chmod 777 MongoDB-OrangePI/install.sh
 
+EXPOSE 27017
+
 CMD [ "./MongoDB-OrangePI/install.sh" ]
